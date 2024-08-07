@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Filter dan Sort</title>
+    <link rel="stylesheet" href="data.css">
+</head>
+<body>
+    <div>
+        <button id="filter-button" onclick="toggleFilterMenu()">Filter</button>
+        <input type="text" id="search-input" placeholder="Cari...">
+        <button id="search-button" onclick="applyFilters()">Cari</button>
+        <button id="sort-button" onclick="sortData('name')">Urutkan Berdasarkan Nama</button>
+    </div>
+    
+    <div class="filter-menu" id="filter-menu">
+        <div class="filter-content">
+            <label for="graduation-year">Angkatan:</label>
+            <input type="number" id="graduation-year" placeholder="Tahun Angkatan">
+            
+            <label for="status">Status:</label>
+            <select id="status" onchange="toggleCustomStatusInput()">
+                <option value="all">Semua</option>
+                <option value="working">Bekerja</option>
+                <option value="studying">Kuliah</option>
+                <option value="working-and-studying">Bekerja dan Kuliah</option>
+                <option value="other">Lainnya</option>
+            </select>
+            
+            <div id="custom-status-container" style="display: none;">
+                <label for="custom-status">Keterangan Status:</label>
+                <input type="text" id="custom-status" placeholder="Masukkan keterangan status">
+            </div>
+            
+            <label for="university">Universitas:</label>
+            <input type="text" id="university" placeholder="Nama Universitas">
+            
+            <label for="major">Jurusan:</label>
+            <input type="text" id="major" placeholder="Nama Jurusan">
+            
+            <label for="workplace">Tempat Bekerja:</label>
+            <input type="text" id="workplace" placeholder="Nama Tempat Bekerja">
+            
+            <label for="position">Pekerjaan:</label>
+            <input type="text" id="position" placeholder="Nama Pekerjaan">
+            
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender">
+                <option value="all">Semua</option>
+                <option value="male">Laki-laki</option>
+                <option value="female">Perempuan</option>
+            </select>
+            
+            <button onclick="applyFilters()">Terapkan Filter</button>
+            <button onclick="toggleFilterMenu()">Tutup</button>
+        </div>
+    </div>
+    
+    <div class="data-table">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Tempat Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Agama</th>
+                    <th>Alamat</th>
+                    <th>NISN</th>
+                    <th>Angkatan</th>
+                    <th>Status</th>
+                    <th>Universitas</th>
+                    <th>Jurusan</th>
+                    <th>Tempat Bekerja</th>
+                    <th>Pekerjaan</th>
+                </tr>
+            </thead>
+            <tbody id="data-body">
+                <!-- Data rows akan ditambahkan di sini oleh JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="data.js"></script>
+</body>
+</html>

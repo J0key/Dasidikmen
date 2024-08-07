@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data Siswa Alumni</title>
+    <link rel="stylesheet" href="input data.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Input Data Siswa Alumni</h1>
+        <form id="alumniForm" onsubmit="return validateForm()">
+            <label for="name">Nama Siswa:</label>
+            <input type="text" id="name" name="Nama" required>
+
+            <label for="birthplace">Tempat Lahir:</label>
+            <input type="text" id="birthplace" name="Tempat Lahir" required>
+
+            <label for="birthdate">Tanggal Lahir:</label>
+            <input type="date" id="birthdate" name="Tanggal Lahir" required>
+
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Pilih Jenis Kelamin</option>
+                <option value="male">Laki-laki</option>
+                <option value="female">Perempuan</option>
+            </select>
+            <label for="religion">Agama:</label>
+            <input type="text" id="religion" name="Agama" required>
+
+            <label for="address">Alamat:</label>
+            <input type="text" id="address" name="Alamat" required>
+
+            <label for="nisn">NISN:</label>
+            <input type="text" id="nisn" name="NISN" required>
+
+            <label for="school">Asal Sekolah:</label>
+            <input type="text" id="school" name="Asal Sekolah" required>
+
+            <label for="graduationYear">Tahun Lulus:</label>
+            <input type="text" id="graduationYear" name="Tahun Lulus" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" onchange="toggleFields()" required>
+                <option value="">Pilih Status</option>
+                <option value="bekerja">Bekerja</option>
+                <option value="pendidikan">Meneruskan Pendidikan</option>
+                <option value="bekerja_dan_pendidikan">Bekerja dan Melanjutkan Pendidikan</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+
+            <div id="workFields" style="display: none;">
+                <label for="workPlace">Nama Tempat Kerja:</label>
+                <input type="text" id="workPlace" name="workPlace">
+
+                <label for="jobTitle">Pekerjaan:</label>
+                <input type="text" id="jobTitle" name="jobTitle">
+            </div>
+
+            <div id="studyFields" style="display: none;">
+                <label for="university">Nama Universitas/Sekolah Tinggi:</label>
+                <input type="text" id="university" name="university">
+
+                <label for="major">Jurusan:</label>
+                <input type="text" id="major" name="major">
+            </div>
+
+            <div id="combinedFields" style="display: none;">
+                <label for="combinedUniversity">Nama Universitas/Sekolah Tinggi:</label>
+                <input type="text" id="combinedUniversity" name="combinedUniversity">
+
+                <label for="combinedMajor">Jurusan:</label>
+                <input type="text" id="combinedMajor" name="combinedMajor">
+
+                <label for="combinedWorkPlace">Nama Tempat Kerja:</label>
+                <input type="text" id="combinedWorkPlace" name="combinedWorkPlace">
+
+                <label for="combinedJobTitle">Pekerjaan:</label>
+                <input type="text" id="combinedJobTitle" name="combinedJobTitle">
+            </div>
+
+            <div id="lainnyaFields" style="display: none;">
+                <label for="keteranganStatus">Status:</label>
+                <input type="text" id="keteranganStatus" name="keteranganStatus">
+            </div>
+
+            <button type="submit">Simpan</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <script src="input data.js"></script>
+</body>
+</html>

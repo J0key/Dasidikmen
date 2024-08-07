@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="project.css" />
+    <title>CS DIKPORA</title>
+</head>
+<body>
+    <header>
+        <div class="judul">
+            <h1>CS</h1>
+            <div class="disdikpora">
+                <p>disdik</p>
+                <p>pora</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home">home</a></li>
+                <li><a href="about">about</a></li>
+                <li><a href="contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Sistem Informasi Data Siswa Alumni</h1>
+        <form id="alumniForm" onsubmit="return validateForm()">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" onchange="toggleFields()" required>
+                <option value="">Pilih Status</option>
+                <option value="bekerja">Bekerja</option>
+                <option value="kuliah">Kuliah</option>
+            </select>
+
+            <div id="workFields" style="display: none;">
+                <label for="workPlace">Tempat Kerja:</label>
+                <input type="text" id="workPlace" name="workPlace">
+                <label for="position">Posisi Pekerjaan:</label>
+                <input type="text" id="position" name="position">
+            </div>
+
+            <div id="studyFields" style="display: none;">
+                <label for="college">Nama Perguruan Tinggi:</label>
+                <input type="text" id="college" name="college">
+                <label for="major">Jurusan:</label>
+                <input type="text" id="major" name="major">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <script src="project.js"></script>
+</body>
+</html>
